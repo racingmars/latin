@@ -6,17 +6,26 @@
 		<script type="text/javascript">
 		<!--
 			var cards = [
-				["porta, -ae (f) -> Sg. Nom.", "porta", 0, 0],
-				["porta, -ae (f) -> Sg. Gen.", "portae", 0, 0],
-				["porta, -ae (f) -> Sg. Dat.", "portae", 0, 0],
-				["porta, -ae (f) -> Sg. Acc.", "portam", 0, 0],
-				["porta, -ae (f) -> Sg. Abl.", "portā", 0, 0],
-				["porta, -ae (f) -> Pl. Nom.", "portae", 0, 0],
-				["porta, -ae (f) -> Pl. Gen.", "portārum", 0, 0],
-				["porta, -ae (f) -> Pl. Dat.", "portīs", 0, 0],
-				["porta, -ae (f) -> Pl. Acc.", "portās", 0, 0],
-				["porta, -ae (f) -> Pl. Abl.", "portīs", 0, 0]
+				["1st Singular", [
+					["porta, -ae (f) -> Sg. Nom.", "porta"],
+					["porta, -ae (f) -> Sg. Gen.", "portae"],
+					["porta, -ae (f) -> Sg. Dat.", "portae"],
+					["porta, -ae (f) -> Sg. Acc.", "portam"],
+					["porta, -ae (f) -> Sg. Abl.", "portā"] ] ],
+				["1st Plural", [
+					["porta, -ae (f) -> Pl. Nom.", "portae"],
+					["porta, -ae (f) -> Pl. Gen.", "portārum"],
+					["porta, -ae (f) -> Pl. Dat.", "portīs"],
+					["porta, -ae (f) -> Pl. Acc.", "portās"],
+					["porta, -ae (f) -> Pl. Abl.", "portīs"] ] ]
 			];
+
+			var activeCards = new Array();
+
+			// For now, we will just make all cards active. In the future,
+			// we will allow the user to choose the sets of cards they want
+			// to be quizzed on.
+			activeCards = activeCards.concat(cards[0][1], cards[1][1]);
 			
 			var sequence = new Array();
 			
@@ -49,7 +58,7 @@
 			
 			function init() {
 				pos = 0;
-				sequence = generateRandomSequence(cards.length);
+				sequence = generateRandomSequence(activeCards.length);
 			}
 			
 			
@@ -61,7 +70,7 @@
 				}
 				
 				currentCard = sequence[pos];
-				document.getElementById('question').innerHTML = cards[currentCard][0];
+				document.getElementById('question').innerHTML = activeCards[currentCard][0];
 				document.getElementById('feedback').innerHTML = "";
 				document.getElementById('answer').value = "";
 				document.getElementById('status').innerHTML = (pos+1) + " of " + sequence.length;
@@ -79,7 +88,7 @@
 			
 			function checkAnswer() {
 				var userAnswer = document.getElementById('answer').value;
-				if(userAnswer == cards[currentCard][1]) {
+				if(userAnswer == activeCards[currentCard][1]) {
 					document.getElementById('feedback').innerHTML = "Correct!";
 					document.getElementById('next').focus();
 				} else {
