@@ -64,23 +64,43 @@
 				document.getElementById('question').innerHTML = cards[currentCard][0];
 				document.getElementById('feedback').innerHTML = "";
 				document.getElementById('answer').value = "";
+				document.getElementById('status').innerHTML = (pos+1) + " of " + sequence.length;
+				document.getElementById('answer').focus();
+			}
+
+			function handleKeyPress(e) {
+				if(e.keyCode == 13) {
+					checkAnswer();
+					return false;
+				} else {
+					return true;
+				}
 			}
 			
 			function checkAnswer() {
 				var userAnswer = document.getElementById('answer').value;
 				if(userAnswer == cards[currentCard][1]) {
 					document.getElementById('feedback').innerHTML = "Correct!";
+					document.getElementById('next').focus();
 				} else {
 					document.getElementById('feedback').innerHTML = "Incorrect.";
+					document.getElementById('answer').focus();
+					document.getElementById('answer').select();
 				}
 			}
 			
 			function insertChar(character) {
 				document.getElementById('answer').value += character;
+				document.getElementById('answer').focus();
 			}
 		-->
 		</script>
 		<style type="text/css">
+			div {
+				text-align: center;
+				margin: 0 auto;
+			}
+
 			#question {
 				background-color: #ffff99;
 				width: 400px;
@@ -102,23 +122,31 @@
 	<body onload="go();">
 	
 		<h1>Latin Declensions</h1>
+
+		<div>
 		
-		<p id="question"></p>
+		<div id="question"></div>
 		
 		<div>
-			<input id="answer" />
-			<input type="button" value="Go" onclick="checkAnswer();"/>
-			<input type="button" value="Next" onclick="go();"/>
+			<input id="answer" onkeypress="return handleKeyPress(event);"/>
+			<input type="button" id="go" value="Go" onclick="checkAnswer();"/>
+			<input type="button" id="next" value="Next" onclick="go();"/>
 		</div>
 		
 		<div id="feedback"></div>
 
 		<div>
-			<input type="button" value="ā" onclick="insertChar('ā')" />
-			<input type="button" value="ē" onclick="insertChar('ē')" />
-			<input type="button" value="ī" onclick="insertChar('ī')" />
-			<input type="button" value="ō" onclick="insertChar('ō')" />
-			<input type="button" value="ū" onclick="insertChar('ū')" />
+			<input type="button" accesskey="a" value="ā" onclick="insertChar('ā')" />
+			<input type="button" accesskey="e" value="ē" onclick="insertChar('ē')" />
+			<input type="button" accesskey="i" value="ī" onclick="insertChar('ī')" />
+			<input type="button" accesskey="o" value="ō" onclick="insertChar('ō')" />
+			<input type="button" accesskey="u" value="ū" onclick="insertChar('ū')" />
+		</div>
+
+		<div id="status"></div>
+
+		<div style="width: 600px"><p>Example: if the question is "porta, -ae -> Sg. Acc.", you are being asked to enter the Singular Accusative case of the word with the dictionary entry "porta, -ae". So you would enter "portae" as the answer. To insert vowels with macrons, use the buttons on the screen. These buttons all have access keys with the corresponding vowels... for example Alt-a should enter ā.</p></div>
+
 		</div>
 	</body>
 	
