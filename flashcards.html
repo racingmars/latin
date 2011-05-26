@@ -102,6 +102,44 @@
 				document.getElementById('answer').value += character;
 				document.getElementById('answer').focus();
 			}
+
+			function doSetup() {
+				var i;
+				activeCards = new Array();
+				for(i=0; i<document.checkboxes.cardset.length; i++) {
+					if(document.checkboxes.cardset[i].checked) {
+						activeCards = activeCards.concat(cards[i][1]);
+					}
+				}
+
+				document.getElementById('setup').style.display = 'none';
+				document.getElementById('content').style.display = 'block';
+				sequence = new Array();
+				go();
+			}
+
+			function startSetup() {
+				var br;
+				var checkbox;
+				
+				var i;
+				for(i=0; i<cards.length; i++) {
+					br = document.createElement('br');
+					checkbox = document.createElement('input');
+					checkbox.type = "checkbox";
+					checkbox.name = "cardset";
+					document.getElementById('checkboxes').appendChild(checkbox);
+					document.getElementById('checkboxes').appendChild(
+						document.createTextNode(cards[i][0]));
+					document.getElementById('checkboxes').appendChild(br);
+				}
+			}
+
+			function resumeSetup() {
+				document.getElementById('setup').style.display = 'block';
+				document.getElementById('content').style.display = 'none';
+			}
+
 		-->
 		</script>
 		<style type="text/css">
@@ -125,14 +163,27 @@
 				padding: 20px;
 				text-align: center;
 			}
+
+			#setup {
+				display: block;
+			}
+
+			#content {
+				display: none;
+			}
 		</style>
 	</head>
 
-	<body onload="go();">
+	<body onload="startSetup();">
 	
 		<h1>Latin Declensions</h1>
 
-		<div>
+		<div id="setup">
+			<form id="checkboxes" name="checkboxes"></form>
+			<p><input type="button" value="Start" onclick="doSetup();"></p>
+		</div>
+
+		<div id="content">
 		
 		<div id="question"></div>
 		
@@ -155,6 +206,8 @@
 		<div id="status"></div>
 
 		<div style="width: 600px"><p>Example: if the question is "porta, -ae -> Sg. Acc.", you are being asked to enter the Singular Accusative case of the word with the dictionary entry "porta, -ae". So you would enter "portae" as the answer. To insert vowels with macrons, use the buttons on the screen. These buttons all have access keys with the corresponding vowels... for example Alt-a should enter ā.</p></div>
+
+		<div><input type="button" value="Setup" onclick="resumeSetup();"></div>
 
 		</div>
 	</body>
