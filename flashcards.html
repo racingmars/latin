@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Latin Flashcards</title>
+		
+		<script type="text/javascript">
+		<!--
+			var cards = [
+				["porta, -ae -> Sg. Nom.", "porta", 0, 0],
+				["porta, -ae -> Sg. Gen.", "portae", 0, 0],
+				["porta, -ae -> Sg. Dat.", "portae", 0, 0],
+				["porta, -ae -> Sg. Acc.", "portam", 0, 0],
+				["porta, -ae -> Sg. Abl.", "portā", 0, 0],
+				["porta, -ae -> Pl. Nom.", "portae", 0, 0],
+				["porta, -ae -> Pl. Gen.", "portārum", 0, 0],
+				["porta, -ae -> Pl. Dat.", "portīs", 0, 0],
+				["porta, -ae -> Pl. Acc.", "portās", 0, 0],
+				["porta, -ae -> Pl. Abl.", "portīs", 0, 0]
+			];
+			
+			var sequence = new Array();
+			
+			var currentCard = 0;
+			var pos = 0;
+		
+			function generateRandomSequence(size) {
+				var sequence = new Array();
+				var i = size;
+				var j;
+				while(i>0) {
+					j = Math.floor(Math.random()*size);
+					if(!isValueInSequence(j, sequence)) {
+						sequence.push(j);
+						i--;
+					}
+				}
+				return sequence;
+			}
+			
+			function isValueInSequence(theory, sequence) {
+				var i;
+				for(i=0; i<sequence.length; i++) {
+					if(sequence[i]==theory) {
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			function init() {
+				pos = 0;
+				sequence = generateRandomSequence(cards.length);
+			}
+			
+			
+			function go() {
+				pos++;
+				
+				if(pos>=sequence.length) {
+					init();
+				}
+				
+				currentCard = sequence[pos];
+				document.getElementById('question').innerHTML = cards[currentCard][0];
+				document.getElementById('feedback').innerHTML = "";
+				document.getElementById('answer').value = "";
+			}
+			
+			function checkAnswer() {
+				var userAnswer = document.getElementById('answer').value;
+				if(userAnswer == cards[currentCard][1]) {
+					document.getElementById('feedback').innerHTML = "Correct!";
+				} else {
+					document.getElementById('feedback').innerHTML = "Incorrect.";
+				}
+			}
+			
+			function insertChar(character) {
+				document.getElementById('answer').value += character;
+			}
+		-->
+		</script>
+		<style type="text/css">
+			#question {
+				background-color: #ffff99;
+				width: 400px;
+				height: 50px;
+				padding: 20px;
+				text-align: center;
+			}
+			
+			#feedback {
+				background-color: #ff99ff;
+				width: 400px;
+				height: 50px;
+				padding: 20px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body onload="go();">
+	
+		<h1>Latin Declensions</h1>
+		
+		<p id="question"></p>
+		
+		<div>
+			<input id="answer" />
+			<input type="button" value="Go" onclick="checkAnswer();"/>
+			<input type="button" value="Next" onclick="go();"/>
+		</div>
+		
+		<div id="feedback"></div>
+
+		<div>
+			<input type="button" value="ā" onclick="insertChar('ā')" />
+			<input type="button" value="ē" onclick="insertChar('ē')" />
+			<input type="button" value="ī" onclick="insertChar('ī')" />
+			<input type="button" value="ō" onclick="insertChar('ō')" />
+			<input type="button" value="ū" onclick="insertChar('ū')" />
+		</div>
+	</body>
+	
+
+</html>
