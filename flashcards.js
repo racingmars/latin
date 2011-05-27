@@ -18,14 +18,7 @@ var cards = [
 ];
 
 var activeCards = [];
-
-// For now, we will just make all cards active. In the future,
-// we will allow the user to choose the sets of cards they want
-// to be quizzed on.
-activeCards = activeCards.concat(cards[0][1], cards[1][1]);
-
 var sequence = [];
-
 var currentCard = 0;
 var pos = 0;
 
@@ -133,6 +126,3 @@ function resumeSetup() {
 	document.getElementById('setup').style.display = 'block';
 	document.getElementById('content').style.display = 'none';
 }
-
-
-
