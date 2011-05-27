@@ -14,7 +14,24 @@ var cards = [
 		["porta, -ae (f) -> Pl. Gen.", "portārum"],
 		["porta, -ae (f) -> Pl. Dat.", "portīs"],
 		["porta, -ae (f) -> Pl. Acc.", "portās"],
-		["porta, -ae (f) -> Pl. Abl.", "portīs"] ] ]
+		["porta, -ae (f) -> Pl. Abl.", "portīs"] ] ],
+	["2nd Singular (male)", [
+		["amīcus, -ī (m) -> Sg. Nom.", "amīcus"],
+		["amīcus, -ī (m) -> Sg. Gen.", "amīcī"],
+		["amīcus, -ī (m) -> Sg. Dat.", "amīcō"],
+		["amīcus, -ī (m) -> Sg. Acc.", "amīcum"],
+		["amīcus, -ī (m) -> Sg. Abl.", "amīcō"],
+		["ager, -grī (m) -> Sg. Nom.", "ager"],
+		["ager, -grī (m) -> Sg. Gen.", "agrī"],
+		["ager, -grī (m) -> Sg. Dat.", "agrō"],
+		["ager, -grī (m) -> Sg. Acc.", "agrum"],
+		["ager, -grī (m) -> Sg. Abl.", "agrō"] ] ],
+	["2nd Singular (neuter)", [
+		["dōnum, -ī (n) -> Sg. Nom.", "dōnum"],
+		["dōnum, -ī (n) -> Sg. Gen.", "dōnī"],
+		["dōnum, -ī (n) -> Sg. Dat.", "dōnō"],
+		["dōnum, -ī (n) -> Sg. Acc.", "dōnum"],
+		["dōnum, -ī (n) -> Sg. Abl.", "dōnō"] ] ]
 ];
 
 var activeCards = [];
