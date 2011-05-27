@@ -1,0 +1,11 @@
+This is a simple browser-based flashcard application for studying
+Latin grammer paradigms. It provides a dictionary entry for a word, then
+the case that you need to put the word in, then it's up to you to type in
+the answer.
+
+I'm developing this as I memorize the paradigms, so right now it just has a
+couple of noun cases. More will show up as I learn them and need to practice.
+
+You can download the files and run in a browser off of your hard drive, or
+just go to http://mattwilson.org/latin/ to use it.
+
