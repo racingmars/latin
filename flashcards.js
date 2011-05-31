@@ -118,6 +118,11 @@ function doSetup() {
 		}
 	}
 
+	if (activeCards.length === 0) {
+		alert("Please select at least one card set.")
+		return;
+	}
+
 	document.getElementById('setup').style.display = 'none';
 	document.getElementById('content').style.display = 'block';
 	sequence = [];
