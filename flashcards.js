@@ -3,13 +3,13 @@
 	maxlen: 80, indent: 4 */
 
 var cards = [
-	["1st Singular", [
+	["1st Singular (female)", [
 		["porta, -ae (f) -> Sg. Nom.", "porta"],
 		["porta, -ae (f) -> Sg. Gen.", "portae"],
 		["porta, -ae (f) -> Sg. Dat.", "portae"],
 		["porta, -ae (f) -> Sg. Acc.", "portam"],
 		["porta, -ae (f) -> Sg. Abl.", "portā"] ] ],
-	["1st Plural", [
+	["1st Plural (female)", [
 		["porta, -ae (f) -> Pl. Nom.", "portae"],
 		["porta, -ae (f) -> Pl. Gen.", "portārum"],
 		["porta, -ae (f) -> Pl. Dat.", "portīs"],
@@ -20,12 +20,13 @@ var cards = [
 		["amīcus, -ī (m) -> Sg. Gen.", "amīcī"],
 		["amīcus, -ī (m) -> Sg. Dat.", "amīcō"],
 		["amīcus, -ī (m) -> Sg. Acc.", "amīcum"],
-		["amīcus, -ī (m) -> Sg. Abl.", "amīcō"],
-		["ager, -grī (m) -> Sg. Nom.", "ager"],
-		["ager, -grī (m) -> Sg. Gen.", "agrī"],
-		["ager, -grī (m) -> Sg. Dat.", "agrō"],
-		["ager, -grī (m) -> Sg. Acc.", "agrum"],
-		["ager, -grī (m) -> Sg. Abl.", "agrō"] ] ],
+		["amīcus, -ī (m) -> Sg. Abl.", "amīcō"]]],
+	["2nd Plural (male)", [
+		["amīcus, -ī (m) -> Pl. Nom.", "amīcī"],
+		["amīcus, -ī (m) -> Pl. Gen.", "amīcōrum"],
+		["amīcus, -ī (m) -> Pl. Dat.", "amīcīs"],
+		["amīcus, -ī (m) -> Pl. Acc.", "amīcōs"],
+		["amīcus, -ī (m) -> Pl. Abl.", "amīcīs"]]],
 	["2nd Singular (neuter)", [
 		["dōnum, -ī (n) -> Sg. Nom.", "dōnum"],
 		["dōnum, -ī (n) -> Sg. Gen.", "dōnī"],
