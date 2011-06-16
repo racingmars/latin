@@ -32,7 +32,13 @@ var cards = [
 		["dōnum, -ī (n) -> Sg. Gen.", "dōnī"],
 		["dōnum, -ī (n) -> Sg. Dat.", "dōnō"],
 		["dōnum, -ī (n) -> Sg. Acc.", "dōnum"],
-		["dōnum, -ī (n) -> Sg. Abl.", "dōnō"] ] ]
+		["dōnum, -ī (n) -> Sg. Abl.", "dōnō"]]],
+    ["2nd Plural (neuter)", [
+		["dōnum, -ī (n) -> Pl. Nom.", "dōna"],
+		["dōnum, -ī (n) -> Pl. Gen.", "dōnōrum"],
+		["dōnum, -ī (n) -> Pl. Dat.", "dōnō"],
+		["dōnum, -ī (n) -> Pl. Acc.", "dōna"],
+		["dōnum, -ī (n) -> Pl. Abl.", "dōnō"]]]
 ];
 
 var activeCards = [];
