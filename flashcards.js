@@ -38,7 +38,13 @@ var cards = [
 		["dōnum, -ī (n) -> Pl. Gen.", "dōnōrum"],
 		["dōnum, -ī (n) -> Pl. Dat.", "dōnīs"],
 		["dōnum, -ī (n) -> Pl. Acc.", "dōna"],
-		["dōnum, -ī (n) -> Pl. Abl.", "dōnīs"]]]
+		["dōnum, -ī (n) -> Pl. Abl.", "dōnīs"]]],
+	["3rd Singular (male/female)", [
+		["rēx, rēgis (m) -> Sg. Nom.", "rēx"],
+		["rēx, rēgis (m) -> Sg. Gen.", "rēgis"],
+		["rēx, rēgis (m) -> Sg. Dat.", "rēgī"],
+		["rēx, rēgis (m) -> Sg. Acc.", "rēgem"],
+		["rēx, rēgis (m) -> Sg. Abl.", "rēge"]]]
 ];
 
 var activeCards = [];
