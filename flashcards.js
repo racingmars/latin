@@ -44,7 +44,13 @@ var cards = [
 		["rēx, rēgis (m) -> Sg. Gen.", "rēgis"],
 		["rēx, rēgis (m) -> Sg. Dat.", "rēgī"],
 		["rēx, rēgis (m) -> Sg. Acc.", "rēgem"],
-		["rēx, rēgis (m) -> Sg. Abl.", "rēge"]]]
+		["rēx, rēgis (m) -> Sg. Abl.", "rēge"]]],
+	["3rd Plural (male/female)", [
+		["rēx, rēgis (m) -> Pl. Nom.", "rēgēs"],
+		["rēx, rēgis (m) -> Pl. Gen.", "rēgum"],
+		["rēx, rēgis (m) -> Pl. Dat.", "rēgibus"],
+		["rēx, rēgis (m) -> Pl. Acc.", "rēgēs"],
+		["rēx, rēgis (m) -> Pl. Abl.", "rēgibus"]]]
 ];
 
 var activeCards = [];
